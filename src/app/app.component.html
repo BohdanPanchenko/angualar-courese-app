@@ -1,0 +1,60 @@
+<div class="wrapper">
+  <app-header>
+    <app-button
+      *ngIf="!isLoggedIn"
+      class="user-auth__login"
+      textValue="login"
+      (click)="navigateToAuth('login')"
+    ></app-button>
+    <app-button
+      *ngIf="isLoggedIn"
+      class="user-auth__logout"
+      textValue="logout"
+    ></app-button>
+  </app-header>
+  <main class="main">
+    <!-- <app-courses *ngSwitchCase="'courses'" [updatePage]="updatePage.bind(this)">
+      <app-button
+        class="header__button"
+        textValue="add new course"
+        (click)="updatePage.call(this, 'createCourse')"
+      ></app-button>
+    </app-courses>
+    <app-course-info
+      *ngSwitchCase="'courseInfo'"
+      [courseInfo]="coursesList[index]"
+      [updatePage]="updatePage.bind(this)"
+    ></app-course-info>
+    <app-auth
+      *ngSwitchCase="'userAuth'"
+      [authType]="pageSwitcher['userAuth'].authType"
+      [goTo]="authGoTo.bind(this)"
+    ></app-auth>
+    <app-course-form *ngSwitchCase="'createCourse'">
+      <app-button
+        (click)="updatePage.call(this, 'courses')"
+        textValue="cancel"
+        class="form-cancel-btn button"
+      ></app-button>
+    </app-course-form>
+    <app-course-form *ngSwitchCase="'editCourse'">
+      <app-button
+        (click)="updatePage.call(this, 'courses')"
+        textValue="cancel"
+        class="form-cancel-btn button"
+      ></app-button>
+    </app-course-form> -->
+    <router-outlet></router-outlet>
+
+    <!-- <app-course-form *ngSwitchCase="'createCourse'"></app-course-form> -->
+  </main>
+</div>
+<!-- <button type="button" class="button"><a [routerLink]="">View Course</a></button> -->
+
+<!-- <ng-container [ngSwitch]="role">
+
+  <div *ngSwitchCase="admin">admin</div>
+  <div *ngSwitchCase="user">user</div>
+  <div *ngSwitchCase="guest">guest</div>
+   -->
+<!-- 'courses', 'login', 'registration', 'courseInfo', 'createCourse', 'editCourse', -->

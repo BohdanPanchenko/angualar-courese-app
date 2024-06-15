@@ -1,0 +1,10 @@
+@import "style.utils.scss";
+.form-message {
+  text-align: center;
+  a {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+    color: $primary-dark;
+  }
+}

@@ -1,0 +1,18 @@
+<section class="auth-page">
+  <app-login *ngIf="authType === 'login'">
+    <a (click)="navigateTo('registration')"> Register</a>
+  </app-login>
+
+  <app-registration *ngIf="authType === 'registration'">
+    <a (click)="navigateTo('login')">Login</a>
+  </app-registration>
+  <!-- /////////////////////////////////////////// -->
+  <!-- <app-login *ngIf="authType === 'login'">
+    <a href="#" (click)="goTo('registration')"> Register</a>
+  </app-login>
+
+  <app-registration *ngIf="authType === 'registration'">
+    <a href="#" (click)="goTo('login')">Login</a>
+
+  </app-registration> -->
+</section>

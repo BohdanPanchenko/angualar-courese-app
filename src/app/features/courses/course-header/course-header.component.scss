@@ -1,0 +1,17 @@
+.courses__header {
+  display: flex;
+  column-gap: 25px;
+  justify-content: space-between;
+  > * {
+    flex-basis: 50%;
+  }
+}
+.search__button {
+  max-width: 148px;
+}
+.header__button {
+  flex-grow: 1;
+  text-align: right;
+}
+.add-course-btn {
+}

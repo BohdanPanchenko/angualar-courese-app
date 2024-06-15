@@ -1,0 +1,15 @@
+<form
+  class="courses__search search search-form"
+  role="search"
+  aria-label="Search Form"
+>
+  <label for="search-input" class="invisible">Search</label>
+  <input
+    type="text"
+    id="search-input"
+    name="search"
+    placeholder="Input text"
+    class="search__input"
+  />
+  <ng-content select=".search__button"></ng-content>
+</form>

@@ -1,0 +1,33 @@
+@import "style.utils.scss";
+:host {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin-top: -75px;
+}
+.info {
+}
+.info__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > * {
+    width: fit-content;
+  }
+}
+.info__message {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  text-transform: capitalize;
+  color: $primary-dark;
+  margin-bottom: 24px;
+}
+.info__instruction {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: $primary-dark;
+  margin-bottom: 40px;
+}

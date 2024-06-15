@@ -1,0 +1,16 @@
+<button
+  [ngClass]="getButtonClassName()"
+  [type]="type"
+  class="button"
+  [disabled]="isDisabled"
+>
+  <div *ngIf="textValue" class="button__text">{{ textValue }}</div>
+  <div *ngIf="iconName" class="button__icon icon">
+    <ng-container *ngIf="iconName === 'remove'"
+      ><fa-icon [icon]="faTrashCan" class="fa-regular"></fa-icon>
+    </ng-container>
+    <ng-container *ngIf="iconName === 'edit'"
+      ><fa-icon [icon]="faPencil"></fa-icon
+    ></ng-container>
+  </div>
+</button>

@@ -1,0 +1,28 @@
+<section class="courses">
+  <div class="courses__container container">
+    <app-course-header *ngIf="!isEmpty">
+      <!-- <ng-content select=".header__button"></ng-content> -->
+      <app-button
+        class="header__button"
+        textValue="Add new course"
+        (click)="goToCreateCourse()"
+      ></app-button>
+    </app-course-header>
+
+    <app-courses-list
+      *ngIf="!isEmpty"
+      [courses]="courses"
+      (clickOnShow)="showCourse($event)"
+      (clickOnEdit)="editCourse($event)"
+      (clickOnDelete)="deleteCourse($event)"
+    >
+    </app-courses-list>
+    <app-info *ngIf="isEmpty">
+      <app-button
+        (click)="goToCreateCourse()"
+        class="info__add-new-course"
+        textValue="Add new course"
+      ></app-button>
+    </app-info>
+  </div>
+</section>

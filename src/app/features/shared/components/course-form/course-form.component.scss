@@ -1,0 +1,201 @@
+@import "style.utils.scss";
+:host {
+  padding-top: 57px;
+  padding-bottom: 45px;
+  display: block;
+  width: 100%;
+}
+.form-title {
+  max-width: 1104px;
+  margin: 0 auto;
+}
+.course-form-container {
+}
+.form-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  text-transform: capitalize;
+  color: $primary-dark;
+  margin-bottom: 45px;
+  padding-left: 25px;
+}
+.fieldset-wrapper {
+  padding: 42px 80px;
+  border: 1px solid $color-grey;
+  background-color: #fff;
+}
+.form {
+  max-width: 1104px;
+  margin: 0 auto;
+  legend {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    text-transform: capitalize;
+    color: $primary-dark;
+    margin-bottom: 24px;
+  }
+  label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 143%;
+    color: $primary-dark;
+    margin-bottom: 4px;
+  }
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    @include input-text-field;
+  }
+  .form-duration,
+  .form-authors {
+    input {
+      max-width: 400px;
+    }
+  }
+
+  .error-message {
+    @include error-message;
+    margin-bottom: 15px;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  &.error {
+    .error-message {
+      visibility: visible;
+    }
+    input[type="text"]:not(#author-name),
+    textarea {
+      border-color: #ff0000;
+    }
+  }
+}
+.form-duration .form-group {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 16px;
+  input {
+    flex-grow: 1;
+    appearance: textfield;
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+  }
+  .error-message,
+  label {
+    width: 100%;
+  }
+}
+.authors-column .form-group {
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  label {
+    width: 100%;
+  }
+  input {
+    flex-grow: 1;
+  }
+}
+// sass templaet for form-ms
+.error-message {
+}
+.duration-info {
+}
+.authors-column {
+  .error-message {
+    width: 100%;
+  }
+}
+.authors-list {
+}
+.form-authors {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  .authors-column:nth-child(2) {
+    // flex-grow: 1;
+    > * {
+      width: fit-content;
+      text-align: center;
+    }
+  }
+  .authors-column:first-child {
+    flex-grow: 1;
+    h2 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 100%;
+      color: $primary-dark;
+      margin-top: 32px;
+      // margin-bottom: 36px;
+    }
+  }
+  h2 {
+    margin-bottom: 24px;
+    white-space: nowrap;
+  }
+}
+.course-authors {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: $primary-dark;
+  li input {
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: $primary-dark;
+    border: none;
+    margin-bottom: 5px;
+  }
+}
+.form-actions {
+  display: flex;
+  column-gap: 20px;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+textarea {
+  min-height: 152px;
+  resize: none;
+}
+fieldset {
+  border: none;
+}
+.authors-list {
+  * {
+    font-size: 20px;
+  }
+  li {
+    display: flex;
+    column-gap: 9px;
+    button {
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
+li {
+  align-items: center;
+  .btn-remove-author,
+  .btn-add-author {
+    border: none;
+    font-size: 24px;
+  }
+}
+.course-authors {
+  li input,
+  p {
+    font-weight: 500;
+  }
+  li input {
+    outline: none;
+  }
+}

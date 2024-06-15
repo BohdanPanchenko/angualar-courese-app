@@ -1,0 +1,61 @@
+@import "style.utils.scss";
+:host {
+  max-width: 585px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.form-title {
+  font-style: normal;
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  text-transform: capitalize;
+  color: $primary-dark;
+  margin-bottom: 36px;
+}
+.form-container {
+  padding-top: 36px;
+  width: 100%;
+  padding: 56px 150px 57px;
+  background-color: #fff;
+  border: 1px solid $color-grey;
+  border-radius: $border-radius;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin: 15px 0;
+  label {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+    text-transform: capitalize;
+    color: $primary-dark;
+  }
+  &.error .form-input {
+    border-color: #ff0000;
+  }
+}
+.form-input {
+  @include input-text-field;
+  line-height: 125%;
+}
+.error-message {
+  @include error-message;
+}
+.form-group.error .error-message {
+  visibility: visible;
+}
+app-button {
+  display: block;
+  margin-top: 31px;
+  margin-bottom: 38px;
+}

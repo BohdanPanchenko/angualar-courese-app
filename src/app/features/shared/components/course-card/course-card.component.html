@@ -1,0 +1,38 @@
+<article class="course-card">
+  <div class="course-card__column">
+    <h3 class="course-card__title">{{ courseCard.title }}</h3>
+    <p class="course-card__description">{{ courseCard.description }}</p>
+  </div>
+  <div class="course-card__column">
+    <div class="course-card__info">
+      <div class="course-card__authors course-details">
+        <h4>Authors:</h4>
+        <span> {{ courseCard.authors }}</span>
+      </div>
+      <div class="course-card__authors course-details">
+        <h4>Duration:</h4>
+        <span> {{ courseCard.duration | duration }} hours</span>
+      </div>
+      <div class="course-card__authors course-details">
+        <h4>Created:</h4>
+        <span> {{ courseCard.creationDate | customDate }}</span>
+      </div>
+    </div>
+    <div class="course-card__actions">
+      <ng-content select=".course-card__show-btn"></ng-content>
+      <ng-content select=".course-card__remove-btn"></ng-content>
+      <ng-content select=".course-card__edit-btn"></ng-content>
+
+      <!-- <ng-content select=".course-card__show-btn"></ng-content>
+            <ng-content *ngIf="isEditable" select=".course-card__remove-btn" [deleteCourse]="deleteCourse"></ng-content>
+            <ng-content *ngIf="isEditable" select=".course-card__edit-btn"></ng-content> -->
+
+      <!-- <app-button class="course-card__show-btn" textValue="show course"
+                [showCourse]="showCourseContext"></app-button>
+            <app-button *ngIf="isEditable" class="course-card__remove-btn" iconName="remove"
+                [deleteCourse]="deleteCourseContext"></app-button>
+            <app-button *ngIf="isEditable" class="course-card__edit-btn" iconName="edit"
+                [editCourse]="editCourseContext"></app-button> -->
+    </div>
+  </div>
+</article>

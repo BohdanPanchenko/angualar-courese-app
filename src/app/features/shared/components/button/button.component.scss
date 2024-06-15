@@ -1,0 +1,59 @@
+@import "style.utils.scss";
+:host {
+  cursor: pointer;
+}
+.button {
+  padding: 13px 18px;
+  background-color: $primary-blue;
+  border-radius: $border-radius;
+  color: #fff;
+  transition: 0.4s;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    border-color: $primary-blue;
+    color: $primary-blue;
+    background-color: #fff;
+    .ng-fa-icon {
+      color: $primary-blue;
+    }
+  }
+  &.button_text-content {
+    min-width: 180px;
+  }
+  &.button_icon-content {
+    max-width: 60px;
+  }
+  .button__text {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: inherit;
+  }
+}
+
+.ng-fa-icon {
+  color: #fff;
+  font-size: 20px;
+}
+
+.search__button {
+  max-width: 148px;
+}
+
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+  cursor: pointer;
+}

@@ -1,0 +1,13 @@
+<header class="header">
+  <div class="header__container container">
+    <a class="header__logo" data-target="courses" (click)="goHomePage()">
+      <img src="logo/logo.png" alt="logo" />
+    </a>
+    <div class="header__auth user-auth">
+      <div class="user-auth__name">{{ userName }}</div>
+      <ng-content select=".user-auth__login"></ng-content>
+      <ng-content select=".user-auth__logout"></ng-content>
+    </div>
+    <!-- <app-button class="header__button" textValue="login" iconName=""></app-button> -->
+  </div>
+</header>

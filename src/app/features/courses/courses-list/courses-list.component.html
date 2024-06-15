@@ -1,0 +1,25 @@
+<ul class="courses__list">
+  <li *ngFor="let item of courses; index as idx" class="courses__item">
+    <!-- <app-course-card [courseCard]="item" [isEditable]="item.isEditable" (clickOnShow)="showCourse(idx)"
+                    (clickOnDelete)="deleteCourse(idx)" (clickOnEdit)="editCourse(idx)">
+                </app-course-card> -->
+
+    <app-course-card [courseCard]="item" [isEditable]="item.isEditable">
+      <app-button
+        class="course-card__show-btn"
+        textValue="Show course"
+        (click)="showCourse(idx)"
+      ></app-button>
+      <app-button
+        class="course-card__edit-btn"
+        iconName="edit"
+        (click)="editCourse(idx)"
+      ></app-button>
+      <app-button
+        class="course-card__remove-btn"
+        iconName="remove"
+        (click)="deleteCourse(idx)"
+      ></app-button>
+    </app-course-card>
+  </li>
+</ul>

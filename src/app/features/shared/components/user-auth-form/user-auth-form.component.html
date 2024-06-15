@@ -1,0 +1,39 @@
+<!-- <login-page class="login-page"> -->
+<h2 class="form-title">{{ formTitle }}</h2>
+<div class="form-container">
+  <form class="form" #form="ngForm">
+    <div
+      *ngFor="let field of fields"
+      class="form-group"
+      [ngClass]="{ error: verifyField(field.name) }"
+    >
+      <label [for]="field.name">{{ field.name }}</label>
+      <input
+        class="form-input"
+        [type]="field.type"
+        [id]="field.name"
+        [placeholder]="field.placeholder"
+        [required]="field.required"
+        [name]="field.name"
+        ngModel
+        appDynamicvalidator
+        [validatorName]="field.name"
+      />
+
+      <div class="error-message">
+        {{ getErrorMessage(field.name) }}
+        <div class="error-placeholder">
+          {{ !getErrorMessage(field.name) ? "error placeholder" : "" }}
+        </div>
+      </div>
+    </div>
+    <app-button
+      class="form-submit"
+      textValue="Submit"
+      type="submit"
+      [isDisabled]="form.invalid"
+    ></app-button>
+  </form>
+  <ng-content></ng-content>
+</div>
+<!-- </login-page> -->

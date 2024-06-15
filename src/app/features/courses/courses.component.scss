@@ -1,0 +1,19 @@
+:host {
+  display: grid;
+  grid-template-rows: 1fr;
+  flex-grow: 1;
+  .courses {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+}
+.courses__container {
+  max-width: 1122px;
+  padding: {
+    top: 75px;
+    bottom: 75px;
+  }
+  display: flex;
+  flex-direction: column;
+  row-gap: 33px;
+}

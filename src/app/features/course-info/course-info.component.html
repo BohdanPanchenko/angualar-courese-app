@@ -1,0 +1,36 @@
+<section class="course-info">
+  <div class="course-info__container container">
+    <article class="course-info__item">
+      <h3 class="course-info__title">{{ courseInfo.title }}</h3>
+      <div class="course-info__body">
+        <div class="course-info__column">
+          <div class="course-info__description">
+            <h4>Description:</h4>
+            <p>{{ courseInfo.description }}</p>
+          </div>
+        </div>
+        <div class="course-info__column">
+          <div class="course-info__table table">
+            <h4>Id:</h4>
+            <p class="course-info__id">{{ courseInfo.id }}</p>
+            <h4>Duration:</h4>
+            <p class="course-info__duration">
+              <b>{{ courseInfo.duration | duration }}</b> hours
+            </p>
+            <h4>Created:</h4>
+            <p class="course-info__creation-date">
+              {{ courseInfo.creationDate | customDate }}
+            </p>
+            <h4>Authors:</h4>
+            <p class="course-info__authors">{{ courseInfo.authors }}</p>
+          </div>
+        </div>
+      </div>
+      <app-button
+        textValue="back"
+        class="course-info__button back-btn"
+        (click)="returnBack()"
+      ></app-button>
+    </article>
+  </div>
+</section>

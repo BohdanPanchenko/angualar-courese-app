@@ -1,0 +1,36 @@
+.header {
+  border-bottom: 1px solid #cfcfcf;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: {
+    top: 15px;
+    bottom: 15px;
+  }
+}
+.container {
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header__auth {
+}
+.user-auth {
+  display: flex;
+  column-gap: 26px;
+  align-items: center;
+}
+.user-auth__name {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333e48;
+}

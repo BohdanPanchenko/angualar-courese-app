@@ -1,0 +1,165 @@
+<!-- <section class="create-course-page"> -->
+
+<!-- <div class="course-form-container"> -->
+<div class="container">
+  <h1 class="form-title">{{ title }}</h1>
+  <form class="form" [formGroup]="myForm">
+    <div class="fieldset-wrapper">
+      <fieldset class="form-main">
+        <legend>Main Info</legend>
+        <div
+          class="form-group"
+          [ngClass]="{
+            error: myForm.controls.title.errors
+          }"
+        >
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Input text"
+            formControlName="title"
+          />
+          <span class="error-message">Title is required.</span>
+        </div>
+        <div
+          class="form-group"
+          [ngClass]="{ error: myForm.controls.description.errors }"
+        >
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Input text"
+            formControlName="description"
+          ></textarea>
+          <span class="error-message">Description is required.</span>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-duration">
+        <legend>Duration</legend>
+        <div
+          class="form-group"
+          [ngClass]="{ error: myForm.controls.duration.errors }"
+        >
+          <label for="duration">Duration</label>
+          <input
+            type="number"
+            id="duration"
+            name="duration"
+            placeholder="Input text"
+            formControlName="duration"
+            (keydown)="disableUpDownArrows($event)"
+          />
+          <span class="duration-info"
+            ><b>{{
+              !(durationField.value | duration)
+                ? ""
+                : (durationField.value | duration) + " hours"
+            }}</b>
+          </span>
+          <span class="error-message">{{ "Duration is required." }}</span>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-authors">
+        <div class="authors-column">
+          <legend>Authors</legend>
+          <div
+            class="form-group"
+            [ngClass]="{
+              error: myForm.controls.authorName.errors
+            }"
+          >
+            <label for="author-name">Author Name</label>
+            <input
+              type="text"
+              id="author-name"
+              name="author-name"
+              placeholder="Input text"
+              formControlName="authorName"
+            />
+            <app-button
+              type="button"
+              textValue="Create Author"
+              (click)="createAuthor()"
+            ></app-button>
+            <!-- <button type="button" class="create-author-button"></button> -->
+            <span
+              class="error-message"
+              >{{ myForm.controls.authorName.errors?.['message'] || "placeholder" }}</span
+            >
+          </div>
+          <div class="authors-list">
+            <h2>Authors List</h2>
+            <!-- ngFor -->
+            <ul>
+              <li *ngFor="let author of authorsList">
+                <span>{{ author }}</span>
+                <button
+                  class="btn-add-author"
+                  (click)="addAuthor(author)"
+                  type="button"
+                >
+                  +
+                </button>
+                <button
+                  class="btn-remove-author"
+                  (click)="removeAuthor(author)"
+                  type="button"
+                >
+                  🗑️
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="authors-column">
+          <div class="course-authors" formArrayName="authors">
+            <h2>Course Authors</h2>
+            <ul>
+              <li *ngFor="let author of authors.controls; let idx = index">
+                <input
+                  type="text"
+                  name="author"
+                  id="{{ idx }}"
+                  value="{{ author.value }}"
+                  [formControlName]="idx"
+                  readonly
+                />
+              </li>
+            </ul>
+            <p *ngIf="!courseAuthors.length">Author list is empty</p>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="form-actions">
+      <app-button
+        textValue="cancel"
+        class="form-cancel-btn button"
+        (click)="goBackHome()"
+      ></app-button>
+      <app-button
+        type="button"
+        textValue="create course"
+        [isDisabled]="myForm.invalid || !courseAuthors.length"
+        type="submit"
+        class="create-course-button"
+      ></app-button>
+      <!-- Cancel button -->
+
+      <!-- <button
+        (click)="isFormSubmitted = !isFormSubmitted"
+        type="submit"
+        class="create-course-button"
+      >
+        Create Course
+      </button> -->
+    </div>
+  </form>
+</div>
+<!-- </div> -->
+<!-- </section> -->

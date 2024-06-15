@@ -1,0 +1,29 @@
+$primary-blue: #007298;
+$primary-dark: #333e48;
+$color-grey: #cfcfcf;
+$border-radius: 4px;
+@mixin input-text-field {
+  padding: 13px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $primary-dark;
+  background: #ffffff;
+  border: 1px solid $color-grey;
+  border-radius: $border-radius;
+
+  &:placeholder {
+    color: $color-grey;
+  }
+}
+@mixin error-message {
+  visibility: hidden;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #ff0000;
+  margin-top: 5px;
+  &.visible {
+    visibility: visible;
+  }
+}

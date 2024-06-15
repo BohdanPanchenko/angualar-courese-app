@@ -1,0 +1,67 @@
+@import "style.utils.scss";
+.course-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 47px;
+  max-width: 1122px; //temp
+  margin: 0 auto; //temp
+  padding: 21px 31px 35px;
+  box-shadow: (2px 0px 8px rgba(0, 0, 0, 0.25));
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 7px;
+    height: 100%;
+    background-color: $primary-dark;
+  }
+}
+.course-card__column {
+}
+.course-card__column:nth-child(2) {
+  flex-grow: 1;
+  min-width: 310px;
+}
+.course-card__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 160%;
+  text-transform: capitalize;
+  color: $primary-dark;
+  margin-bottom: 10px;
+}
+.course-card__description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: $primary-dark;
+}
+.course-card__info {
+  margin-bottom: 31px;
+}
+.course-card__authors {
+}
+.course-details {
+  > * {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    color: $primary-dark;
+  }
+  h4 {
+    font-weight: 700;
+    display: inline-block;
+  }
+}
+.course-card__actions {
+  display: flex;
+  column-gap: 11px;
+  align-items: center;
+}
